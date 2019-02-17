@@ -1,0 +1,200 @@
+<div class="top_section full-video-bg">
+    <header class="header main-header" ng-class="{'menuopen': isBurgerMenuVisible}" style="z-index: 9000">
+        <div class="content n-full-content content100" ng-style="{ height: isDesktop? '100vh' : 'auto' }" style="padding: 0">
+            <div ng-if="!isDesktop" class="headerer desk">
+                <div id="btn" ng-click="changeBurgerMenuStatus()">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <div class="logo">
+                    <a href="" ng-click="goToMain()">
+                        <img src="{{restaurant.logo}}" alt="">
+                    </a>
+                </div>
+                <div class="mobile-menu" ng-if="isBurgerMenuVisible">
+                    <ul class="mobile-menu-list">
+                        <li ng-repeat="route in routes" ng-if="route.isVisible||route.isDropDown" ng-click="handleRoute(route, restaurant.siteTemplateID)">
+                            <a ng-if="!route.isDropDown">
+                                {{translations[route.name.toLowerCase()][language]|| route.name.toUpperCase()}}
+                            </a>
+                            <div ng-if="route.isDropDown" class="more" style="margin-bottom: -20px">
+                                <div class="val bord">
+                                    <span>{{translations[route.dropDownItems[0].toLowerCase()][language]||
+                                        route.dropDownItems[0].toUpperCase()}}</span>
+                                    <ul ng-if="route.dropDownItems">
+                                        <li ng-repeat="item in route.dropDownItems" ng-click="handleDDRoute(routes, item, restaurant.siteTemplateID)">
+                                            <a href="">
+                                                {{translations[item.toLowerCase()][language]|| item.toUpperCase()}}
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="mobile-more">
+                    <div class="val bord" ng-click="showMenuBoard('currency')">
+                        <p>{{activeCurrency.symbol}} {{activeCurrency.code}}</p>
+                        <div class="bord-list" ng-class="{'active': menuBoards.currency}">
+                            <ul ng-if="currencies">
+                                <li ng-repeat="currency in currencies" ng-click="selectCurrency(currency)">
+                                    <a class="drop-down-link" href="">
+                                        {{currency.symbol}} {{currency.code}}
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="lang bord" ng-click="showMenuBoard('lang')">
+                        <span>{{activeLang.name}}</span>
+                        <div class="bord-list" ng-class="{'active': menuBoards.lang}">
+                            <ul>
+                                <li ng-repeat="lang in dictionary" ng-click="selectLang(lang)">
+                                    <a class="drop-down-link" href="">
+                                        {{lang.name}}
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="sticky_m" class="headerer desk" ng-if="isDesktop">
+                <div class="logo" ng-if="!isBurgerMenuVisible" ng-click="goToMain()">
+                    <img src="{{restaurant.logo}}" alt="">
+                </div>
+                <div class="menu">
+                    <ul class="menu-list">
+                        <li ng-repeat="route in routes" ng-if="route.isVisible||route.isDropDown">
+                            <a ng-if="!route.isDropDown" href="" ng-click="handleRoute(route, restaurant.siteTemplateID)">
+                                {{translations[route.name.toLowerCase()][language]|| route.name.toUpperCase()}}
+                            </a>
+                            <div ng-if="route.isDropDown" class="more">
+                                <div="normal" class="val bord" ng-class="{'active': route.active}" ng-click="setRouteActive(route)">
+                                    <span class="drop-down-btn">{{translations[route.dropDownItems[0].toLowerCase()][language]||
+                                        route.dropDownItems[0].toUpperCase()}}</span>
+                                    <ul ng-if="route.dropDownItems" class="this">
+                                        <li ng-repeat="item in route.dropDownItems" ng-click="handleDDRoute(routes, item, restaurant.siteTemplateID)">
+                                            <a class="drop-down-link" href="">
+                                                {{translations[item.toLowerCase()][language]|| item.toUpperCase()}}
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="more">
+                        <div class="val bord" ng-class="{'active': menuBoards.currency}" ng-click="showMenuBoard('currency')">
+                            <span class="drop-down-btn">{{activeCurrency.symbol}} {{activeCurrency.code}}</span>
+                            <ul class="drop-down-list" ng-if="currencies" style="left:-38px;">
+                                <li ng-repeat="currency in currencies" ng-click="selectCurrency(currency)">
+                                    <a class="drop-down-link" href="">
+                                        {{currency.symbol}} {{currency.code}}
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="lang bord" ng-class="{'active': menuBoards.lang}" ng-click="showMenuBoard('lang')">
+                            <span class="drop-down-btn">{{activeLang.name}}</span>
+                            <ul style="left:-25px;">
+                                <li ng-repeat="lang in dictionary" ng-click="selectLang(lang)">
+                                    <a class="drop-down-link" href="">
+                                        {{lang.name}}
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </header>
+
+
+    <div id="HMain" ng-style="{height: isDesktop? 'auto':'100vh'}">
+        <div class="background-image" ng-if="isDesktop&&!backVideo||(!(isDesktop||photoRest.length))" style="background: url('{{coverImg}}') no-repeat center; background-size: cover; width: 100%; height: 100vh">
+        </div>
+        <div ng-if="!isDesktop&&!backVideo&&photoRest.length">
+            <div class="head_block" ng-if="backVideo">
+                <h2>{{translations['gallery'][language]}}</h2>
+            </div>
+            <div data="slides" slick-slider="{dots: false,
+              autoplay: true,
+              autoplaySpeed: 2000,
+              arrows: false,
+              draggable: true,
+              slidesToShow: 1,
+              infinite: true}">
+                <div ng-repeat="photo in photoRest">
+                    <div style="background: url('{{photo}}') no-repeat center;background-size: cover; height: 100vh"></div>
+                </div>
+            </div>
+        </div>
+        <div class="video-wrap" ng-if="backVideo" style="height:100vh !important; width:100%">
+            <div class="video-mask" ng-if="restaurant.masks.length" style="background: url('{{maskUrl}}') no-repeat center; background-size: cover;">
+            </div>
+            <video width="100%" height="auto" autoplay playsinline muted preload loop id="main_video" src="{{backVideo}}">
+            </video>
+        </div>
+    </div>
+</div>
+
+<div id="GustoLogo" style="z-index: 10000" ng-style="{ bottom: isDesktop ? '15px' : '60px' }">
+    <a href="https://getgusto.app/">
+        <img src="assets/img/gusto_logo.png" alt="Gusto Logo" />
+    </a>
+</div>
+
+<script>
+    let doc = $(document);
+    let fixed = false;
+
+
+    if ($('#sticky_m').length) {
+        const onScroll = (e) => {
+            if ($('#sticky_m').hasClass('desk')) {
+                const docTop = doc.scrollTop();
+                $('.bord').removeClass('active');
+
+                if (docTop > 2) {
+                    if (!fixed) {
+                        $('#sticky_m').addClass('fixed').css('top', 0);
+                        $('.drop-down-link').addClass('blue').css('top', 0);
+                        fixed = true;
+                    }
+                } else {
+                    $('#sticky_m').removeClass('fixed').css('top', 0);
+                    $('.drop-down-link').removeClass('blue').css('top', 0);
+                    fixed = false;
+                }
+            }
+        };
+
+        $(window).on('scroll', onScroll);
+    };
+
+
+    $(document).ready(function () {
+        $('.drop-down-btn').click(function () {
+
+
+            if ($('.bord').hasClass('active')) {
+                $('.bord').removeClass('active');
+            }
+
+
+
+        });
+    });
+
+
+
+
+
+</script>
