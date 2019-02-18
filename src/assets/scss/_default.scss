@@ -5,6 +5,13 @@
   padding: 0;
 }
 
+html {
+  font-size: 8px;
+  @include extra-small {
+    font-size: 10px;
+  }
+}
+
 html, body {
   width: 100%;
   min-height: 100vh;
@@ -15,7 +22,7 @@ body {
   // display: flex;
   // flex-direction: column;
   font-family: $base-font;
-  font-size: $base-font-size;
+  font-size: 1.6rem;
 }
 
 .content {
@@ -24,8 +31,6 @@ body {
 
 .container {
   display: flex;
-  align-items: center;
-  align-content: space-around;
   width: 100%;
   max-width: 1800px;
 

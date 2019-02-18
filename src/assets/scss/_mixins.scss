@@ -1,8 +1,15 @@
+$breakpoint-extra-small: 420px;
 $breakpoint-small: 576px;
 $breakpoint-medium: 768px;
 $breakpoint-large: 992px;
 $breakpoint-extra: 1200px;
 $breakpoint-extra-large: 1920px;
+
+@mixin extra-small {
+  @media screen and (min-width: $breakpoint-extra-small) {
+    @content;
+  }
+}
 
 @mixin small {
   @media screen and (min-width: $breakpoint-small) {

@@ -14,10 +14,10 @@
     align-items: center;
     align-content: space-around;
     justify-content: flex-end;
-    height: 80px;
+    height: 8rem;
 
     h2 {
-        margin-bottom: 20px;
+        margin-bottom: 2px;
     }
 }
 
@@ -29,8 +29,8 @@
         display: flex;
         align-items: center;
         &-img {
-            width: 80px;
-            // height: 70px;
+            width: 8rem;
+            // height: 70rem;
         }
     }
     
@@ -40,7 +40,7 @@
         align-content: center;
         list-style: none;
         &-item {
-            padding-right: 15px;
+            padding-right: 1.5rem;
             display: none;
             @include medium {
                 display: inline-block;
@@ -56,14 +56,14 @@
     }
 
     &__burger {
-        width: 20px;
+        width: 2rem;
         height: 3px;
         background: #000;
         position: relative;
-        margin-right: 30px;
+        margin-right: 3rem;
         &:before {
             content: "";
-            width: 20px;
+            width: 2rem;
             height: 3px;
             background: #000;
             position: absolute;
@@ -71,11 +71,11 @@
         }
         &:after {
             content: "";
-            width: 20px;
+            width: 2rem;
             height: 3px;
             background: #000;
             position: absolute;
-            bottom: -6px
+            bottom: -6px;
         }
         @include medium {
             display: none;
@@ -84,7 +84,7 @@
     }
 
     &__tel {
-        padding-right: 80px;
+        padding-right: 8rem;
         i {
             color: #C7C7C7;
         }
@@ -97,10 +97,10 @@
             }
         }
         @include medium {
-            padding-right: 60px;
+            padding-right: 6rem;
         }
         @include large {
-            padding-right: 30px;
+            padding-right: 3rem;
           }
     }
     
@@ -110,11 +110,11 @@
         top: 0;
         right: 0;
         background-color: #E7E7E7;
-        width: 60px;
+        width: 6rem;
         height: 100%;
         &-switch {
             height: 50%;
-            font-size: 12px;
+            font-size: 1.2rem;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -125,7 +125,7 @@
         }
         &-switch.active {
             background-color: #D9D9D9;
-            font-size: 16px;
+            font-size: 1.6rem;
             
             a {
                 color: #000;
@@ -135,26 +135,28 @@
 }
 
 .container--menu-header {
-    height: 80px;
+    height: 8rem;
+    justify-content: space-between;
     align-items: center;
     align-content: space-around;
 }
 
 .menu-header {
     background-color: $secondary;
+    color: #fff;
     &__nav {
         display: flex;
         align-items: center;
 
         &-burger {
-            width: 20px;
+            width: 2rem;
             height: 2px;
             background: rgb(255, 255, 255);
             position: relative;
-            margin-right: 10px;
+            margin-right: 1rem;
             &:before {
                 content: "";
-                width: 20px;
+                width: 2rem;
                 height: 2px;
                 background: rgb(255, 255, 255);
                 position: absolute;
@@ -162,25 +164,45 @@
             }
             &:after {
                 content: "";
-                width: 20px;
+                width: 2rem;
                 height: 2px;
                 background: rgb(255, 255, 255);
                 position: absolute;
-                bottom: -6px
+                bottom: -6px;
             }
         }
         
         &-title {
-            font-size: 20px;
+            font-size: 2rem;
             font-weight: 600;
             display: inline-block;
-            color: #fff;
+            // color: #fff;
         }
     }
+
+    span {
+        font-weight: 300;
+        // display: block;
+        font-size: 1.4rem;
+        padding-top: 5px;
+    }
+
+    &__btn {
+        display: flex;
+    }
+
+    
+}
+
+.login, .compare {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
 }
 
 
-
-
-
-
+.section {
+    height: 100rem;
+    background: #eee;
+}
