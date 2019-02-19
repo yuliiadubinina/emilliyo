@@ -86,7 +86,7 @@ gulp.task('reload', () => {
   });
 });
 
-gulp.task('watch', ['img', 'css', 'html', 'reload'], () => {
+gulp.task('watch', ['css', 'html', 'reload'], () => {
   watch('src/**/*.scss', () => gulp.start('css'));
   watch('src/**/*.html', () => gulp.start('html'));
 });
