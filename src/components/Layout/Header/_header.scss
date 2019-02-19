@@ -28,31 +28,36 @@
         padding: 3px;
         display: flex;
         align-items: center;
+
         &-img {
             width: 8rem;
             // height: 70rem;
         }
     }
-    
+
     &__nav {
         display: flex;
         align-items: center;
         align-content: center;
         list-style: none;
+
         &-item {
             padding-right: 1.5rem;
             display: none;
+
             @include medium {
                 display: inline-block;
-              }
+            }
         }
+
         &-link {
-        text-decoration: none;
-        color: $primary;
-        &:hover {
-            color: $secondary;
+            text-decoration: none;
+            color: $primary;
+
+            &:hover {
+                color: $secondary;
+            }
         }
-    }
     }
 
     &__burger {
@@ -61,6 +66,7 @@
         background: #000;
         position: relative;
         margin-right: 3rem;
+
         &:before {
             content: "";
             width: 2rem;
@@ -69,6 +75,7 @@
             position: absolute;
             top: -6px;
         }
+
         &:after {
             content: "";
             width: 2rem;
@@ -77,17 +84,20 @@
             position: absolute;
             bottom: -6px;
         }
+
         @include medium {
             display: none;
-          }
-    
+        }
+
     }
 
     &__tel {
         padding-right: 8rem;
+
         i {
             color: #C7C7C7;
         }
+
         &-number {
             text-decoration: none;
             color: $primary;
@@ -96,14 +106,16 @@
                 color: #C7C7C7;
             }
         }
+
         @include medium {
             padding-right: 6rem;
         }
+
         @include large {
             padding-right: 3rem;
-          }
+        }
     }
-    
+
 
     &__lang {
         position: absolute;
@@ -112,21 +124,24 @@
         background-color: #E7E7E7;
         width: 6rem;
         height: 100%;
+
         &-switch {
             height: 50%;
             font-size: 1.2rem;
             display: flex;
             justify-content: center;
             align-items: center;
+
             // margin: 0 auto;
             a {
                 color: #8D8D8D;
             }
         }
+
         &-switch.active {
             background-color: #D9D9D9;
             font-size: 1.6rem;
-            
+
             a {
                 color: #000;
             }
@@ -144,6 +159,7 @@
 .menu-header {
     background-color: $secondary;
     color: #fff;
+
     &__nav {
         display: flex;
         align-items: center;
@@ -154,6 +170,7 @@
             background: rgb(255, 255, 255);
             position: relative;
             margin-right: 1rem;
+
             &:before {
                 content: "";
                 width: 2rem;
@@ -162,6 +179,7 @@
                 position: absolute;
                 top: -6px;
             }
+
             &:after {
                 content: "";
                 width: 2rem;
@@ -171,7 +189,7 @@
                 bottom: -6px;
             }
         }
-        
+
         &-title {
             font-size: 2rem;
             font-weight: 600;
@@ -186,15 +204,10 @@
         font-size: 1.4rem;
         padding-top: 5px;
     }
-
-    &__btn {
-        display: flex;
-    }
-
-    
 }
 
-.login, .compare {
+.login,
+.compare {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -205,4 +218,28 @@
 .section {
     height: 100rem;
     background: #eee;
+}
+
+
+.menu-header {
+    display: flex;
+
+    &__user-action {
+        width: 25rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        &-login {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        &-compare {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+    }
 }

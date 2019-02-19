@@ -56,11 +56,21 @@ gulp.task('img', () => {
     .src('src/assets/img/**/*.*')
     .pipe(
       imagemin([
-        imagemin.gifsicle({ interlaced: true }),
-        imagemin.jpegtran({ progressive: true }),
-        imagemin.optipng({ optimizationLevel: 5 }),
+        imagemin.gifsicle({
+          interlaced: true
+        }),
+        imagemin.jpegtran({
+          progressive: true
+        }),
+        imagemin.optipng({
+          optimizationLevel: 5
+        }),
         imagemin.svgo({
-          plugins: [{ removeViewBox: true }, { cleanupIDs: false }],
+          plugins: [{
+            removeViewBox: true
+          }, {
+            cleanupIDs: false
+          }],
         }),
       ]),
     )
@@ -80,3 +90,15 @@ gulp.task('watch', ['img', 'css', 'html', 'reload'], () => {
   watch('src/**/*.scss', () => gulp.start('css'));
   watch('src/**/*.html', () => gulp.start('html'));
 });
+
+
+
+// gulp.task('styles', function() {...});
+// gulp.task('scripts', function() {...});
+
+// gulp.task('clean', function() {...});
+
+// // Per default, start scripts and styles
+// gulp.task('default',
+//   gulp.series('clean', gulp.parallel('scripts', 'styles'),
+//   function() {...}));
