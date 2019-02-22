@@ -7,20 +7,33 @@
 
 html {
   font-size: 8px;
+
   @include extra-small {
+    font-size: 10px;
+  }
+
+  @include large {
+    font-size: 8px;
+  }
+
+  @include extra {
+    font-size: 9px;
+  }
+
+  @include extra-large {
     font-size: 10px;
   }
 }
 
-html, body {
+html,
+body {
+  background: #F5F5F5;
   width: 100%;
   min-height: 100vh;
 }
 
 body {
   margin: 0;
-  // display: flex;
-  // flex-direction: column;
   font-family: $base-font;
   font-size: 1.6rem;
 }
@@ -32,24 +45,16 @@ body {
 .container {
   display: flex;
   width: 100%;
-  max-width: 1800px;
-
-  padding: 0 10px;
+  max-width: 192rem;
+  // max-width: 180rem;
+  padding: 0 1rem;
   margin: 0 auto;
 
-  // @include small {
-  //   padding: 0 10px;
-  // }
-
   @include medium {
-    padding: 0 30px;
+    padding: 0 3rem;
   }
 
   @include large {
-    padding: 0 60px;
+    padding: 0 6rem;
   }
-
-  // @include extra {
-  //   padding: 0 60px;
-  // }
 }

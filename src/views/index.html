@@ -1,9 +1,10 @@
 {% extends 'template.html' %}
 
 {% block title %}
-  Main page
+Main page
 {% endblock %}
 
 {% block content %}
-  <!-- Your unique page content -->
+{% include 'components/navigation-aside/navigation-aside.html' %}
+{% include 'components/popular/popular.html' %}
 {% endblock %}

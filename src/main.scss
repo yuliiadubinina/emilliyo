@@ -3,11 +3,11 @@
 @import "./assets/scss/mixins";
 @import "./assets/scss/default";
 
+@import "./components/layout/header/header";
+@import "./components/layout/footer/footer";
 
-
-@import "./components/Layout/Header/header";
-
-@import "./components/Layout/Footer/footer";
+@import "./components/navigation-aside/navigation-aside";
+@import "./components/popular/popular";
 
 
 @import "./assets/scss/utils";

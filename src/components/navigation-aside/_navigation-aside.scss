@@ -1,0 +1,193 @@
+.main {
+    display: flex;
+    padding-bottom: 5rem;
+    // background: #fff;
+}
+
+.container--main {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+
+    &::after {
+        @include large {
+            content: "";
+            position: absolute;
+            background: #fff;
+            top: 0;
+            left: 0;
+            width: 6rem;
+            height: 100%;
+        }
+    }
+
+    @include extra-large {
+        height: 77vh;
+    }
+
+    @include large {
+        flex-direction: row;
+    }
+}
+
+.navigation-aside {
+    background: #fff;
+    padding-top: 2rem;
+    padding-right: 3.5rem;
+    flex: 1.8 0;
+    display: none;
+    margin-right: 2rem;
+    height: 100%;
+    position: relative;
+
+
+    @include extra {
+        flex: 1.4 0;
+    }
+
+    @include large {
+        display: block;
+    }
+
+    @include extra-large {
+        flex: 1 0;
+    }
+
+    a {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        padding: 2rem 0.5rem;
+        border-bottom: 2px solid $light-gray;
+        color: $primary;
+        text-decoration: none;
+        transition: all .2s;
+
+        &:hover {
+            transform: translateY(-3px);
+            font-weight: 500;
+        }
+
+        &:active,
+        &:focus {
+            outline: none;
+            transform: translateY(-1px);
+        }
+
+        @include extra-large {
+            padding: 3rem 0.5rem;
+        }
+    }
+
+    svg {
+        margin-right: 1rem;
+    }
+}
+
+.slider-container {
+    flex: 6 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.slider-main {
+    margin: 2rem 0;
+    flex: 6 0;
+    display: none;
+    background: bottom/cover no-repeat url(../img/slide-main.png);
+
+
+    @include medium {
+        display: block;
+        height: 40rem;
+    }
+
+    &__boxes {
+        display: flex;
+        position: relative;
+        flex-direction: column;
+
+        @include large {
+            flex-direction: row;
+            justify-content: flex-start;
+        }
+
+        &-content {
+            display: flex;
+            align-content: center;
+            align-items: center;
+            width: 100%;
+            margin: 1rem auto;
+            background-color: #fff;
+            padding: 2rem 2.5rem;
+
+            @include large {
+                flex-direction: column;
+                justify-content: center;
+                align-items: flex-start;
+                width: 20%;
+                margin: 0 2rem 0 0;
+                padding: 1rem 1.5rem;
+            }
+
+            @include extra-large {
+                flex-direction: row;
+                align-items: center;
+                width: 25%;
+
+            }
+
+            span {
+                padding-right: 2rem;
+                font-size: 3rem;
+                font-weight: 600;
+
+                @include large {
+                    font-size: 2rem;
+                }
+            }
+
+        }
+
+
+    }
+
+    &__big-btn {
+        background: $secondary;
+        color: #fff;
+        padding: 4rem 2rem;
+        cursor: pointer;
+        text-decoration: none;
+        font-size: 2rem;
+        transition: all .2s;
+        cursor: pointer;
+
+        &:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 1rem 2rem rgba(#000, .2);
+        }
+
+        &:active,
+        &:focus {
+            outline: none;
+            transform: translateY(-1px);
+            box-shadow: 0 .5rem 1rem rgba(#000, .2);
+        }
+
+
+        @include large {
+            position: absolute;
+            right: 15%;
+            bottom: 0;
+            width: 18%;
+            height: 20rem;
+            padding: 4rem 1.5rem;
+        }
+
+        @include extra-large {
+            right: 7%;
+            width: 13%;
+            padding: 4rem 2.5rem;
+        }
+    }
+}
