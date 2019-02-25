@@ -1,0 +1,44 @@
+.container--partners {
+    display: block;
+}
+
+.partners {
+    text-align: center;
+    font-size: 2rem;
+    padding-bottom: 2rem;
+
+    @include small {
+        text-align: left;
+        font-size: 3rem;
+    }
+
+    &__logo {
+        display: flex;
+        flex-direction: column;
+
+        @include small {
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
+
+        &-item {
+
+            width: 80%;
+            padding-top: 80%;
+            margin: 1rem auto;
+            background: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            @include small {
+                width: 19%;
+                padding-top: 19%;
+            }
+        }
+
+        img {
+            width: 80%;
+        }
+    }
+}

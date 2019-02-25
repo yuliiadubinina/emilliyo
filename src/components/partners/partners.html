@@ -1,0 +1,26 @@
+<section class="partners">
+
+    <div class="container container--partners">
+        <h3 class="partners__title">
+            Our partners
+        </h3>
+
+        {% set items =
+        [
+        { img: "img/partners1.png"},
+        { img: "img/partners2.png"},
+        { img: "img/partners3.png"},
+        { img: "img/partners4.png"},
+        { img: "img/partners5.png"}
+        ]
+        %}
+
+        <div class="partners__logo">
+            {% for item in items %}
+            <div class="partners__logo-item" style="background: #fff center no-repeat url(../{{item.img}}); background-size: 60%;">
+            </div>
+            {% endfor %}
+        </div>
+
+    </div>
+</section>

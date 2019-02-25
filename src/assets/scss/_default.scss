@@ -19,10 +19,6 @@ html {
   @include extra {
     font-size: 9px;
   }
-
-  @include extra-large {
-    font-size: 10px;
-  }
 }
 
 html,

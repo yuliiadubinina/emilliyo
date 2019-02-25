@@ -1,0 +1,29 @@
+.container--about {}
+
+.about {
+
+    &__partners {
+        width: 40%;
+        background: #fff;
+        float: left;
+    }
+
+    &__emilliyo {
+        display: flex;
+        float: right;
+        background: #fff;
+        width: 80%;
+
+        &-img {
+            width: 70%;
+            background: center/cover no-repeat url(../img/about.png);
+        }
+
+        &-content {
+            width: 30%;
+        }
+
+
+    }
+
+}
