@@ -1,4 +1,6 @@
-.container--about {}
+.container--about {
+    padding-top: 4rem;
+}
 
 .about {
 
@@ -6,6 +8,8 @@
         width: 40%;
         background: #fff;
         float: left;
+        padding: 3rem;
+
     }
 
     &__emilliyo {
@@ -21,6 +25,10 @@
 
         &-content {
             width: 30%;
+            padding: 3rem;
+            display: flex;
+            flex-direction: column;
+
         }
 
 
