@@ -41,6 +41,7 @@
                 padding: 2.5rem;
                 position: relative;
                 transition: all .2s;
+                max-width: 30rem;
 
                 &:hover {
                     box-shadow: 0 1rem 2rem rgba(#000, .2);
@@ -50,6 +51,11 @@
                 &:focus {
                     outline: none;
                     box-shadow: 0 .5rem 1rem rgba(#000, .2);
+                }
+
+                @include medium {
+                    max-width: 41rem;
+
                 }
 
                 @include large {

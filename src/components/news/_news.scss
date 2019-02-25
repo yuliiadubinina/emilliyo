@@ -1,0 +1,53 @@
+.container--news {
+    justify-content: space-between;
+    flex-direction: column;
+
+    @include small {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+}
+
+.news {
+    margin: 0 auto;
+    padding-bottom: 6rem;
+
+    &__item {
+        display: flex;
+        flex-direction: column;
+        margin: 0 auto;
+        width: 90%;
+        padding-bottom: 4rem;
+        margin-bottom: 3rem;
+        background-color: #fff;
+        justify-content: space-between;
+
+        @include small {
+            width: 24%;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        span {
+            padding: 0 2rem 0 2rem;
+            color: $secondary;
+            font-size: 1.8rem;
+            font-weight: 500;
+            padding-top: 2rem;
+        }
+
+        a {
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 2rem;
+            color: #000;
+            max-height: 6rem;
+            overflow: hidden;
+            line-height: 3rem;
+            padding: 0 2rem 0 2rem;
+        }
+    }
+}

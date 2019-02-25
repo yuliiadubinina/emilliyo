@@ -1,37 +1,119 @@
 .container--about {
     padding-top: 4rem;
+    text-align: left;
+    position: relative;
+    flex-direction: column;
+
+    @include large {
+        flex-direction: row;
+    }
 }
 
 .about {
+    margin-bottom: 2rem;
 
     &__partners {
-        width: 40%;
-        background: #fff;
-        float: left;
-        padding: 3rem;
 
+        margin: 3rem;
+
+        @include large {
+            width: 40%;
+            margin: 0;
+        }
+
+        background: #fff;
+        padding: 4rem;
+
+
+        @include large {
+            position: absolute;
+            left: 6rem;
+            bottom: 0;
+        }
+
+        &-title {
+            font-size: 2.5rem;
+            font-weight: 500;
+        }
+
+        &-description {
+            color: $secondary-text;
+            max-height: 6rem;
+            overflow: hidden;
+            line-height: 2.2rem;
+        }
+
+        span {
+            color: $secondary;
+            font-size: 1.8rem;
+            font-weight: 500;
+        }
+
+        a {
+            color: $secondary;
+        }
     }
 
     &__emilliyo {
         display: flex;
-        float: right;
-        background: #fff;
-        width: 80%;
+        flex-direction: column;
+
+        @include large {
+            flex-direction: row;
+            padding-left: 20%;
+        }
 
         &-img {
+            display: none;
             width: 70%;
             background: center/cover no-repeat url(../img/about.png);
+
+            @include large {
+                display: block;
+            }
+
         }
 
         &-content {
-            width: 30%;
             padding: 3rem;
             display: flex;
             flex-direction: column;
+            background: #fff;
+            margin: 3rem;
 
+            @include large {
+                width: 30%;
+                margin: 0 0 0 2rem;
+            }
+
+            span {
+                color: $secondary;
+                font-size: 2.5rem;
+                font-weight: 500;
+            }
+
+            &-more {
+                padding-bottom: 4rem;
+
+                @include extra {
+                    padding-bottom: 20rem;
+                }
+
+                color: $secondary;
+            }
+
+            &-follow {
+                text-decoration: none;
+                color: #000;
+                font-weight: 500;
+                font-size: 1.8rem;
+                padding-bottom: 2rem;
+            }
+
+            &-description {
+                overflow: hidden;
+                line-height: 2.2rem;
+            }
         }
-
-
     }
-
 }

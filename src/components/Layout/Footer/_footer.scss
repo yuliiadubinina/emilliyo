@@ -1,5 +1,65 @@
+.container--footer {
+    display: flex;
+    // flex-direction: column;
+}
+
 .footer {
-    background-color: #fff;
-    padding: 15rem 0;
-    text-align: center;
+    color: #fff;
+
+    &__contacts-red {
+        display: flex;
+        flex-direction: column;
+        background-color: $secondary;
+        text-align: left;
+        padding: 4rem 2rem;
+        margin-right: 2rem;
+    }
+
+    &__nav {
+        padding: 4rem 3rem;
+        background: #fff;
+        width: 60%;
+        display: flex;
+        justify-content: space-between;
+
+        span {
+            font-weight: 500;
+        }
+
+        &-list {
+            list-style: none;
+
+            &-title {
+                color: #000;
+            }
+        }
+
+        &-item {
+            color: $secondary-text;
+        }
+
+        &-link {
+            color: $secondary-text;
+            text-decoration: none;
+            line-height: 2.2rem;
+            font-size: 1.5rem;
+        }
+    }
+
+    &__logo {
+        background: #fff;
+        padding: 4rem 3rem;
+        width: 15%;
+
+        img {
+            max-width: 100%;
+            height: auto;
+            padding-bottom: 5rem
+        }
+
+        p {
+            color: $secondary-text;
+            width: 15rem;
+        }
+    }
 }
