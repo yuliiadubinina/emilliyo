@@ -5,7 +5,7 @@
 .container--topbar {
   justify-content: space-between;
   position: relative;
-  z-index: 99;
+  z-index: 999;
 }
 
 .topbar {
@@ -48,8 +48,6 @@
       text-decoration: none;
       color: $primary;
       cursor: pointer;
-
-
 
       &:hover {
         color: $secondary;
@@ -129,15 +127,14 @@
       align-items: center;
       color: #8d8d8d;
       text-decoration: none;
-
-      a {}
     }
 
     &-switch.active {
       background-color: #d9d9d9;
       font-size: 1.6rem;
       color: #000;
-      ;
+      display: flex;
+
     }
   }
 }
@@ -164,6 +161,41 @@
       background: rgb(255, 255, 255);
       position: relative;
       margin-right: 1rem;
+
+      @include large {
+        display: none;
+      }
+
+      &:before {
+        content: "";
+        width: 2rem;
+        height: 2px;
+        background: rgb(255, 255, 255);
+        position: absolute;
+        top: -6px;
+      }
+
+      &:after {
+        content: "";
+        width: 2rem;
+        height: 2px;
+        background: rgb(255, 255, 255);
+        position: absolute;
+        bottom: -6px;
+      }
+    }
+
+    &-burger-desk {
+      display: none;
+      width: 2rem;
+      height: 2px;
+      background: rgb(255, 255, 255);
+      position: relative;
+      margin-right: 1rem;
+
+      @include large {
+        display: block;
+      }
 
       &:before {
         content: "";
