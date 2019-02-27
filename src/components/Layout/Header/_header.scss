@@ -55,35 +55,35 @@
     }
   }
 
-  &__burger {
-    width: 2rem;
-    height: 3px;
-    background: #000;
-    position: relative;
-    margin-right: 3rem;
+  // &__burger {
+  //   width: 2rem;
+  //   height: 3px;
+  //   background: #000;
+  //   position: relative;
+  //   margin-right: 3rem;
 
-    &:before {
-      content: "";
-      width: 2rem;
-      height: 3px;
-      background: #000;
-      position: absolute;
-      top: -6px;
-    }
+  //   &:before {
+  //     content: "";
+  //     width: 2rem;
+  //     height: 3px;
+  //     background: #000;
+  //     position: absolute;
+  //     top: -6px;
+  //   }
 
-    &:after {
-      content: "";
-      width: 2rem;
-      height: 3px;
-      background: #000;
-      position: absolute;
-      bottom: -6px;
-    }
+  //   &:after {
+  //     content: "";
+  //     width: 2rem;
+  //     height: 3px;
+  //     background: #000;
+  //     position: absolute;
+  //     bottom: -6px;
+  //   }
 
-    @include medium {
-      display: none;
-    }
-  }
+  //   @include medium {
+  //     display: none;
+  //   }
+  // }
 
   &__tel {
     padding-right: 8rem;
@@ -146,10 +146,17 @@
   align-content: space-around;
 }
 
+
+
 .menu-header {
   display: flex;
   background-color: $secondary;
   color: #fff;
+  padding-left: 6rem;
+
+  @include large {
+    padding-left: 0;
+  }
 
   &__nav {
     display: flex;
@@ -279,5 +286,96 @@
       font-size: 1.4rem;
       padding-top: 5px;
     }
+  }
+}
+
+
+
+//HAMBURGER MENU
+.menu-header {
+  &__checkbox {
+    display: none;
+  }
+
+  &__button {
+    position: absolute;
+    height: 7rem;
+    width: 7rem;
+    top: -7.5rem;
+    left: 0rem;
+    z-index: 2000;
+    text-align: center;
+    cursor: pointer;
+
+    @include medium {
+      left: 2rem;
+    }
+
+    @include large {
+      display: none;
+    }
+  }
+
+  //FUNCTIONALITY
+
+  &__checkbox:checked~.navigation-aside {
+    // display: block;
+    transform: translateX(-4%);
+    height: auto;
+    width: 103%;
+    z-index: 999;
+  }
+
+  //ICON
+  &__icon {
+    position: relative;
+    margin-top: 3.5rem;
+
+    &,
+    &::before,
+    &::after {
+      width: 3rem;
+      height: 2px;
+      background-color: #fff;
+      display: inline-block;
+    }
+
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      transition: all .2s;
+    }
+
+    &::before {
+      top: -.8rem;
+    }
+
+    &::after {
+      top: .8rem;
+    }
+  }
+
+  &__button:hover &__icon::before {
+    top: -1rem;
+  }
+
+  &__button:hover &__icon::after {
+    top: 1rem;
+  }
+
+  &__checkbox:checked+&__button &__icon {
+    background-color: transparent;
+  }
+
+  &__checkbox:checked+&__button &__icon::before {
+    top: 0;
+    transform: rotate(135deg);
+  }
+
+  &__checkbox:checked+&__button &__icon::after {
+    top: 0;
+    transform: rotate(-135deg);
   }
 }
