@@ -79,6 +79,10 @@ Main page
       <div class="menu-header__nav">
 
 
+
+        <a href="#" class="burger-menu-btn">
+          <span></span>
+        </a>
         <div class="menu-header__nav-burger-desk"></div>
 
         <div class="menu-header__nav-title"><span>Catalog</span></div>
@@ -153,13 +157,15 @@ Main page
 <section class="main">
     <div class="container container--main">
 
-        <input type="checkbox" class="menu-header__checkbox" id="navi-toggle">
+        <!-- <input type="checkbox" class="menu-header__checkbox" id="navi-toggle">
 
         <label for="navi-toggle" class="menu-header__button">
-            <span class="menu-header__icon">&nbsp;</span>
-        </label>
+        </label> -->
+        <!-- <span class="burger-menu-btn"></span> -->
 
         <nav class="navigation-aside" id="navigation-aside">
+
+
 
             <ul class="navigation-aside__list">
                 <li class="navigation-aside__item">
@@ -2086,5 +2092,18 @@ Main page
   </div>
 </footer>
 </body>
+
+
+<script>
+  $(document).ready(function () {
+    $('.burger-menu-btn').on('click', function (e) {
+      e.preventDefault;
+      $(this).toggleClass('burger-menu-btn_active');
+      $('.navigation-aside').toggleClass('active');
+    });
+
+
+  });
+</script>
 
 </html>

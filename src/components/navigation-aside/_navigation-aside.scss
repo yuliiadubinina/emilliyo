@@ -53,8 +53,16 @@
     }
 
     &.active {
-        padding: 0 3rem;
+        // padding-left: 3rem;
         margin: 0;
+        transform: translateX(0);
+        z-index: 999;
+        width: 95vw;
+        // height: 100vh;
+
+        @include medium {
+            width: 93vw;
+        }
     }
 
     @include extra {
@@ -107,6 +115,7 @@
         &:active,
         &:focus {
             outline: none;
+            // display: block;
             transform: translateY(-1px);
             color: $secondary;
 
@@ -202,6 +211,8 @@
         font-size: 2rem;
         transition: all .2s;
         cursor: pointer;
+        margin: 0 3px;
+        margin-bottom: 20px;
 
         &:hover {
             transform: translateY(-3px);
@@ -223,6 +234,7 @@
             width: 18%;
             height: 20rem;
             padding: 4rem 1.5rem;
+            margin-bottom: 0;
         }
 
         @include extra-large {
@@ -231,4 +243,58 @@
             padding: 4rem 2.5rem;
         }
     }
+}
+
+
+.burger-menu-btn {
+    position: relative;
+    display: block;
+    width: 6rem;
+    height: 6rem;
+
+    @include large {
+        display: none;
+    }
+}
+
+.burger-menu-btn span::before,
+.burger-menu-btn span::after,
+.burger-menu-btn span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -1px;
+    margin-left: -15px;
+    width: 30px;
+    height: 2px;
+    display: block;
+    background-color: #fff;
+    transition: transform 0.4s ease;
+}
+
+.burger-menu-btn span::before,
+.burger-menu-btn span::after {
+    content: '';
+}
+
+.burger-menu-btn span::before {
+    transform: translateY(-10px);
+}
+
+.burger-menu-btn span::after {
+    transform: translateY(10px);
+}
+
+.burger-menu-btn_active span {
+    transform: rotate(45deg);
+}
+
+.burger-menu-btn_active span::before {
+    transform: rotate(0deg);
+
+}
+
+.burger-menu-btn_active span::after {
+    transform: rotate(-90deg);
+
 }
