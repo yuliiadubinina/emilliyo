@@ -116,13 +116,10 @@
   align-content: space-around;
 }
 
-
-
 .menu-header {
   display: flex;
   background-color: $secondary;
   color: #fff;
-  // padding-left: 6rem;
 
   @include large {
     padding-left: 0;
@@ -132,36 +129,6 @@
     display: flex;
     align-items: center;
 
-    &-burger {
-      width: 2rem;
-      height: 2px;
-      background: rgb(255, 255, 255);
-      position: relative;
-      margin-right: 1rem;
-
-      @include large {
-        display: none;
-      }
-
-      &:before {
-        content: "";
-        width: 2rem;
-        height: 2px;
-        background: rgb(255, 255, 255);
-        position: absolute;
-        top: -6px;
-      }
-
-      &:after {
-        content: "";
-        width: 2rem;
-        height: 2px;
-        background: rgb(255, 255, 255);
-        position: absolute;
-        bottom: -6px;
-      }
-    }
-
     &-burger-desk {
       display: none;
       width: 2rem;
@@ -169,10 +136,6 @@
       background: rgb(255, 255, 255);
       position: relative;
       margin-right: 1rem;
-
-      @include large {
-        display: block;
-      }
 
       &:before {
         content: "";

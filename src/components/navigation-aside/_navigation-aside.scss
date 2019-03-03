@@ -28,8 +28,7 @@
         flex-direction: row;
     }
 
-    transition: all .2s;
-
+    transition: all 0.2s;
 }
 
 .navigation-aside {
@@ -39,29 +38,29 @@
     padding-bottom: 2rem;
     position: absolute;
     flex: 1.8 0;
-    // display: none;
     height: 100%;
-    transform: translateX(-111%);
-
-    transition: all .5s;
-
+    opacity: 0;
+    transition: all .2s;
 
     @include large {
         margin-right: 2rem;
         padding-bottom: 0;
-
     }
 
     &.active {
-        // padding-left: 3rem;
-        margin: 0;
-        transform: translateX(0);
+        opacity: 1;
         z-index: 999;
-        width: 95vw;
-        // height: 100vh;
+        width: 100vw;
+        transform: translateX(-1rem);
+
 
         @include medium {
-            width: 93vw;
+            width: 95vw;
+            transform: translateX(-1rem);
+        }
+
+        @include large {
+            transform: translateX(0);
         }
     }
 
@@ -71,7 +70,7 @@
 
     @include large {
         position: relative;
-        transform: translateX(0);
+        opacity: 1;
         display: block;
     }
 
@@ -97,10 +96,10 @@
         display: flex;
         align-items: center;
         padding: 2rem 0.5rem;
-        border-bottom: 2px solid $light-gray;
         color: $primary;
         text-decoration: none;
-        transition: all .2s;
+        transition: all 0.2s;
+        border-bottom: 2px solid $light-gray;
 
         &:hover {
             transform: translateY(-3px);
@@ -110,7 +109,6 @@
                 fill: $secondary;
             }
         }
-
 
         &:active,
         &:focus {
@@ -143,9 +141,8 @@
 .slider-main {
     margin: 2rem 0;
     flex: 6 0;
-    display: none;
+    height: 250px;
     background: bottom/cover no-repeat url(../img/slide-main.png);
-
 
     @include medium {
         display: block;
@@ -170,6 +167,8 @@
             margin: 1rem auto;
             background-color: #fff;
             padding: 2rem 2.5rem;
+            overflow: hidden;
+
 
             @include large {
                 flex-direction: column;
@@ -184,22 +183,19 @@
                 flex-direction: row;
                 align-items: center;
                 width: 25%;
-
             }
 
             span {
                 padding-right: 2rem;
                 font-size: 3rem;
                 font-weight: 600;
+                animation: leftToRight ease-in 1s;
 
                 @include large {
                     font-size: 2rem;
                 }
             }
-
         }
-
-
     }
 
     &__big-btn {
@@ -209,23 +205,22 @@
         cursor: pointer;
         text-decoration: none;
         font-size: 2rem;
-        transition: all .2s;
+        transition: all 0.2s;
         cursor: pointer;
         margin: 0 3px;
         margin-bottom: 20px;
 
         &:hover {
             transform: translateY(-3px);
-            box-shadow: 0 1rem 2rem rgba(#000, .2);
+            box-shadow: 0 1rem 2rem rgba(#000, 0.2);
         }
 
         &:active,
         &:focus {
             outline: none;
             transform: translateY(-1px);
-            box-shadow: 0 .5rem 1rem rgba(#000, .2);
+            box-shadow: 0 0.5rem 1rem rgba(#000, 0.2);
         }
-
 
         @include large {
             position: absolute;
@@ -245,16 +240,11 @@
     }
 }
 
-
 .burger-menu-btn {
     position: relative;
     display: block;
     width: 6rem;
     height: 6rem;
-
-    @include large {
-        display: none;
-    }
 }
 
 .burger-menu-btn span::before,
@@ -266,7 +256,7 @@
     margin-top: -1px;
     margin-left: -15px;
     width: 30px;
-    height: 2px;
+    height: 3px;
     display: block;
     background-color: #fff;
     transition: transform 0.4s ease;
@@ -274,7 +264,7 @@
 
 .burger-menu-btn span::before,
 .burger-menu-btn span::after {
-    content: '';
+    content: "";
 }
 
 .burger-menu-btn span::before {
@@ -287,14 +277,28 @@
 
 .burger-menu-btn_active span {
     transform: rotate(45deg);
+
+    @include large {
+        transform: rotate(0);
+    }
 }
 
 .burger-menu-btn_active span::before {
     transform: rotate(0deg);
+    display: none;
 
+
+    @include large {
+        display: block;
+        transform: translateY(-10px);
+    }
 }
 
 .burger-menu-btn_active span::after {
     transform: rotate(-90deg);
 
+    @include large {
+        transform: rotate(0);
+        transform: translateY(10px);
+    }
 }
