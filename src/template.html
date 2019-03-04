@@ -27,12 +27,16 @@
 
 <script>
   $(document).ready(function () {
-    $('.burger-menu-btn').on('click', function (e) {
+
+    if (top.location.pathname === '/index.html') {
+      $('nav.navigation-header').remove();
+    };
+    $('.menu-header__nav').on('click', function (e) {
       e.preventDefault;
       $(this).toggleClass('burger-menu-btn_active');
       $('.navigation-aside').toggleClass('active');
+      $('.navigation-header').toggleClass('active');
     });
-
 
   });
 </script>
